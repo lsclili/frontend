@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 2, Яценко, ІА-з21, Варіант 2</title>
+    <link rel="stylesheet" href="task1.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-section">
+        <h2>Форма для заповнення</h2>
+        <input type="text" id="pib" placeholder="ПІБ">
+        <input type="text" id="group" placeholder="Група">
+        <select id="variant">
+            <option value="">Варіант</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="tel" id="phone" placeholder="Телефон">
+        <input type="email" id="email" placeholder="Пошта">
+        <button onclick="submitData()">Підтвердити</button>
+    </div>
+
+    <div class="data-section">
+        <h3>Введені дані</h3>
+        <p><strong>ПІБ:</strong> <span id="data-pib">---</span></p>
+        <p><strong>Група:</strong> <span id="data-group">---</span></p>
+        <p><strong>Варіант:</strong> <span id="data-variant">---</span></p>
+        <p><strong>Телефон:</strong> <span id="data-phone">---</span></p>
+        <p><strong>Пошта:</strong> <span id="data-email">---</span></p>
+    </div>
+</div>
+
+<script>
+    function submitData() {
+        // Отримання значень з форми
+        const pib = document.getElementById('pib').value;
+        const group = document.getElementById('group').value;
+        const variant = document.getElementById('variant').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+
+        // Виведення даних у правій частині
+        document.getElementById('data-pib').textContent = pib || '---';
+        document.getElementById('data-group').textContent = group || '---';
+        document.getElementById('data-variant').textContent = variant || '---';
+        document.getElementById('data-phone').textContent = phone || '---';
+        document.getElementById('data-email').textContent = email || '---';
+    }
+</script>
+
+</body>
+</html>
